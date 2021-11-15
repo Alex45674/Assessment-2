@@ -5,12 +5,12 @@ from options import contacts
 def interface():
     # Allows the user to select one of these options.
     choice = input("""
-         1) Add a contact
-         2) Show all contacts
-         3) Find a contact
-         4) Edit a contact
+1) Add a contact
+2) Show all contacts
+3) Find a contact
+4) Edit a contact
 
-         Enter the number of the option you would like to perform: """)
+Enter the number of the option you would like to perform: """)
     print('')
 
     # Depending on the users input one of the options is ran, if their input isn't valid the program stops.
@@ -23,4 +23,4 @@ def interface():
     elif choice == '4':
         contacts.edit_contact()
     else:
-        print("Sorry that is not one of the options")
+        print("Sorry that is not one of the options try again.")

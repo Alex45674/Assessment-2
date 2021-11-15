@@ -10,7 +10,7 @@ def interface():
          3) Find a contact
          4) Edit a contact
 
-         Enter the number of the option you would like to peform: """)
+         Enter the number of the option you would like to perform: """)
     print('')
 
     # Depending on the users input one of the options is ran, if their input isn't valid the program stops.

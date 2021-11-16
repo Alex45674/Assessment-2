@@ -28,10 +28,25 @@ def all_contacts():
     print("You have selected option 2 (Show all contacts)")
     print('')
 
-    # This code print all the contacts stored.
+    # This opens the contact data for reading
     with open("contact_data.csv", "r") as data:
+        # This print each line in the csv file
         for line in data:
             print(line)
 
     print('')
     print("All contacts shown.")
+
+def find_contact():
+
+    print("You have selected option 3 (Find a contact)")
+    print('')
+    # Opens the file contact data
+    with open("contact_data.csv", newline='') as data:
+        read_data = csv.reader(data, delimiter = ',')
+        # Creates an empty list to store the contacts information
+        contacts_list = []
+        # For each row in contact data it is added on to the end of my list (contact_list)
+        for row in read_data:
+            contacts_list.append(row)
+        print(contacts_list)

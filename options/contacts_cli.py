@@ -9,6 +9,7 @@ def interface():
 2) Show all contacts
 3) Find a contact
 4) Edit a contact
+5) Exit
 
 Enter the number of the option you would like to perform: """)
     print('')
@@ -22,5 +23,7 @@ Enter the number of the option you would like to perform: """)
         contacts.find_contact()
     elif choice == '4':
         contacts.edit_contact()
+    elif choice == '5':
+        quit()
     else:
         print("Sorry that is not one of the options try again.")

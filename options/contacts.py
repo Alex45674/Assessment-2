@@ -8,14 +8,13 @@ def add_contact():
     # Asks the user for the details required to add a new contact.
     name = input("Enter name of the contact being added: ")
     address = input("Enter the address: ")
-    phoneno_int = input("Enter their phone number in the form ###########: ")
+    phoneno = input(str("Enter their phone number in the form: "))
     birthday = input("Enter their birthday in the form ##/##/####: ")
 
-    phoneno_str = str(phoneno_int)
     # Puts all the new contacts data together to be written as a new row.
-    new_contact = (name, address, phoneno_str, birthday)
+    new_contact = (name, address, phoneno, birthday)
 
-    # Opens the contact data file in a way that new data can be written in.
+    # Opens the contact data file in a way that new data can be added onto the end of the contact data file.
     with open("contact_data.csv", "a", newline='') as data:
         write_contact = csv.writer(data)
 

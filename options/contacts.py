@@ -6,8 +6,8 @@ def add_contact():
     print('')
 
     # Asks the user for the details required to add a new contact.
-    name = input("Enter name of the contact being added: ")
-    address = input("Enter the address: ")
+    name = input("Enter the full name (first and last names) of the contact being added: ")
+    address = input("Enter their street address: ")
     phoneno = input(str("Enter their phone number: "))
     birthday = input("Enter their birthday in the form ##/##/####: ")
 
@@ -52,8 +52,8 @@ def find_contact():
             contacts_list.append(row)
 
         # Asks the user to enter one of the
-        search_info = str(input("""Enter the name, address, phone number or birthday of the contact you want to find
-(Note when entering a birthday please enter it in the form ##/##/####): """))
+        search_info = str(input("""Enter the full name (first and Last), street address, phone number or birthday of the
+contact you want to find. (Note when entering a birthday please enter it in the form ##/##/####): """))
         print('')
 
         # Tells me the number of rows present in the contact data file.
@@ -81,4 +81,7 @@ def find_contact():
                     # Allows the loop to continue
                     continue
 
+def edit_contact():
 
+    print('You have selected option 4 (edit a contact)')
+    print('')

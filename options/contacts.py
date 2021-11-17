@@ -51,46 +51,53 @@ def find_contact():
         for row in read_data:
             contacts_list.append(row)
 
-        # Asks the user to enter one of the
-        search_info = str(input("""Enter the full name (first and Last), street address, phone number or birthday of the
+    # Asks the user to enter one bit of information about the contact their trying to find.
+    search_info = str(input("""Enter the full name (first and Last), street address, phone number or birthday of the
 contact you want to find. (Note when entering a birthday please enter it in the form ##/##/####): """))
-        print('')
+    print('')
 
-        # Tells me the number of rows present in the contact data file.
-        list_length = len(contacts_list)
+    # Tells me the number of rows present in the contact data file.
+    list_length = len(contacts_list)
 
-        # This is used to keep track of what row the element is located.
-        row_num = -1
+    # This is used to keep track of what row the element is located.
+    row_num = -1
 
-        # Goes through each row in my contacts_list.
-        for row in contacts_list:
-            # Adds one to the row number to show it's starting to search a new row.
-            row_num = row_num + 1
-            for information in row:
-                # Checks if any of the contact infromation in that row is the same as the inputted search information.
-                if information == search_info:
-                    print("Contact found: ", contacts_list[row_num])
-                    # Breaks the loop
-                    break
+    # Goes through each row in my contacts_list.
+    for row in contacts_list:
+        # Adds one to the row number to show it's starting to search a new row.
+        row_num = row_num + 1
+        for information in row:
+            # Checks if any of the contact infromation in that row is the same as the inputted search information.
+            if information == search_info:
+                print("Contact found: ", contacts_list[row_num])
+                # Breaks the loop
+                break
                 # If the desired information isn;t found and the loop has gone through all rows this code will be ran.
-                elif (row_num + 1) == list_length:
-                    print('Contact does not exist.')
-                    # This stops the print statement being repeated several times
-                    break
-                else:
-                    # Allows the loop to continue
-                    continue
+            elif (row_num + 1) == list_length:
+                print('Contact does not exist.')
+                # This stops the print statement being repeated several times
+                break
+            else:
+                # Allows the loop to continue
+                continue
 
 def edit_contact():
 
     print('You have selected option 4 (edit a contact)')
     print('')
 
-    # Again creates an empty list
+    # Again creates an empty list.
     contacts_list = []
-    # Opens the file contact data
+    # Opens the file contact data.
     with open("contact_data.csv", newline = '') as data:
         read_data = csv.reader(data, delimiter = ',')
-        # For each row in contact data, it is added on to the end of my list (contact_list)
+        # For each row in contact data, it is added on to the end of my list (contact_list).
         for row in read_data:
             contacts_list.append(row)
+
+    # Asks the user to enter one bit of information of the contact their trying to edit so the contact can be located.
+    search_info = str(input("""Enter the full name (first and Last), street address, phone number or birthday of the
+contact you want to edit. (Note when entering a birthday please enter it in the form ##/##/####): """))
+
+    # Tells me the number of rows present in the contacts_list.
+    rows_present = len(contacts_list)

@@ -45,9 +45,9 @@ def find_contact():
     # Creates an empty list to store the contacts information.
     contacts_list = []
     # Opens the file contact data
-    with open("contact_data.csv", newline='') as data:
+    with open("contact_data.csv", newline = '') as data:
         read_data = csv.reader(data, delimiter = ',')
-        # For each row in contact data it is added on to the end of my list (contact_list)
+        # For each row in contact data, it is added on to the end of my list (contact_list)
         for row in read_data:
             contacts_list.append(row)
 
@@ -85,3 +85,12 @@ def edit_contact():
 
     print('You have selected option 4 (edit a contact)')
     print('')
+
+    # Again creates an empty list
+    contacts_list = []
+    # Opens the file contact data
+    with open("contact_data.csv", newline = '') as data:
+        read_data = csv.reader(data, delimiter = ',')
+        # For each row in contact data, it is added on to the end of my list (contact_list)
+        for row in read_data:
+            contacts_list.append(row)

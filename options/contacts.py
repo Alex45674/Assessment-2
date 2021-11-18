@@ -28,12 +28,7 @@ def add_contact():
 # Puts all the new contacts data together to be written as a new row.
     new_contact = (name, address, phoneno, birthday)
 
-# Opens the contact data file in a way that new data can be added onto the end of the contact data file.
-    with open("contact_data.csv", "a", newline='') as data:
-        write_contact = csv.writer(data)
-
-# Writes the new contacts information in a row.
-        write_contact.writerow(new_contact)
+    contacts_list.append(new_contact)
     print('')
     print("New contact added.")
 

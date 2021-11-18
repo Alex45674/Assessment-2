@@ -42,13 +42,8 @@ def all_contacts():
 
     print("You have selected option 2 (Show all contacts):")
     print('')
-
-# This opens the contact data for reading
-    with open("contact_data.csv", "r") as data:
-        # This print each line in the csv file
-        for line in data:
-            print(line)
-
+    print(contacts_list)
+    print('')
     print("All contacts shown.")
 
 # Executes a section of code that allows the user to find a contact by entering a name,address,phone number or birthday.
@@ -138,8 +133,8 @@ def change_name():
     temp_list = contacts_list[temp_row]
 # Sets the first element which is the name column to the new name they inputted.
     temp_list[0] = new_name
-    print(temp_list)
-    contacts_list.append(temp_list)
+    print('')
+    print("Contact updated: ", temp_list)
 
 def change_address():
     print('')
@@ -149,8 +144,8 @@ def change_address():
     temp_list = contacts_list[temp_row]
 # Sets the second element which is the address column to the new street address they inputted.
     temp_list[1] = new_address
-    print(temp_list)
-    contacts_list.append(temp_list)
+    print('')
+    print("Contact Updated: ", temp_list)
 
 #
 def change_phonenum():
@@ -161,8 +156,8 @@ def change_phonenum():
     temp_list = contacts_list[temp_row]
 # Sets the third element which is the phone number column to the new phone number they inputted.
     temp_list[2] = new_phonenum
-    print(temp_list)
-    contacts_list.append(temp_list)
+    print('')
+    print("Contact updated: ", temp_list)
 
 def change_birthday():
     print('')
@@ -172,7 +167,11 @@ def change_birthday():
     temp_list = contacts_list[temp_row]
 # Sets the last element which is the birthday date column to the new birthday date they inputted.
     temp_list[3] = new_birthday
-    print(temp_list)
-    contacts_list.append(temp_list)
+    print('')
+    print("Contact updated: ", temp_list)
 
-#def delete():
+def delete():
+    # Deletes the contact from the list.
+    contacts_list.pop(temp_row)
+    print('')
+    print('Contact deleted')

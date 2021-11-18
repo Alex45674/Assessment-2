@@ -120,7 +120,7 @@ Is this the contact you wanted to edit?
 Please enter 'yes' if it is or 'no' to keep searching: """))
 # Depending on the users input
                 if search == 'yes':
-
+                    contacts_cli.edit_options()
                     break
                 elif search == 'no':
                     check = False
@@ -133,3 +133,15 @@ Please enter 'yes' if it is or 'no' to keep searching: """))
         print('')
         print('Contact does not exist.')
 
+
+def change_name():
+    print('')
+    new_name = str(input('Please enter the new full name (first and last names): '))
+
+def change_address():
+
+def change_phonenum():
+
+def change_birthday():
+
+def delete():

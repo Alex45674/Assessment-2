@@ -20,10 +20,10 @@ def add_contact():
     print('')
 
 # Asks the user for the details required to add a new contact.
-    name = input("Enter the full name (first and last names) of the contact being added: ")
-    address = input("Enter their street address: ")
-    phoneno = input(str("Enter their phone number: "))
-    birthday = input("Enter their birthday in the form ##/##/####: ")
+    name = str(input("Enter the full name (first and last names) of the contact being added: "))
+    address = str(input("Enter their street address: "))
+    phoneno = str(input("Enter their phone number: "))
+    birthday = str(input("Enter their birthday in the form ##/##/####: "))
 
 # Puts all the new contacts data together to be written as a new row.
     new_contact = (name, address, phoneno, birthday)

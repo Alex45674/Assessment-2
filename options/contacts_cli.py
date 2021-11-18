@@ -29,7 +29,8 @@ Enter the number of the option you would like to perform: """)
         print("Sorry that is not one of the options try again.")
 
 def edit_options():
-    edit = str(input("""What would you like to do:
+    edit = str(input("""
+What would you like to do:
 1) Change name
 2) Change address
 3) Change phone number
@@ -41,7 +42,7 @@ Enter the option you would like to perform: """))
         contacts.change_name()
     elif edit == '2':
         contacts.change_address()
-    elif edit === '3':
+    elif edit == '3':
         contacts.change_phonenum()
     elif edit == '4':
         contacts.change_birthday()

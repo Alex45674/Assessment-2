@@ -1,6 +1,19 @@
 import csv
 from options import contacts_cli
-# Executes a section of code that allows the user to add a new contact to the contact data.
+
+# creates an empty list.
+contacts_list = []
+
+# Opens the file contact data.
+with open("contact_data.csv", newline = '') as data:
+    read_data = csv.reader(data, delimiter = ',')
+
+# For each row in contact data, it is added on to the end of my list (contact_list).
+    for row in read_data:
+        contacts_list.append(row)
+
+temp_row = 0
+
 def add_contact():
 
     print("You have selected option 1 (Add a contact):")
@@ -43,14 +56,6 @@ def find_contact():
 
     print("You have selected option 3 (Find a contact):")
     print('')
-# Creates an empty list to store the contacts information.
-    contacts_list = []
-# Opens the file contact data
-    with open("contact_data.csv", newline = '') as data:
-        read_data = csv.reader(data, delimiter = ',')
-# For each row in contact data, it is added on to the end of my list (contact_list)
-        for row in read_data:
-            contacts_list.append(row)
 
 # Asks the user to enter one bit of information about the contact their trying to find.
     search_info = str(input("""Enter the full name (first and Last), street address, phone number or birthday of the
@@ -67,7 +72,7 @@ contact you want to find. (Note when entering a birthday please enter it in the 
         for information in row:
 # Checks if any of the contact information in that row is the same as the inputted search information.
             if information == search_info:
-                print("Contact(s) found: ", contacts_list[row_num])
+                print("Contact found: ", contacts_list[row_num])
 # Check is set to true to we know the contact exists.
                 check = True
 # If the desired information isn;t found and the loop has gone through all rows this code will be ran.
@@ -82,17 +87,6 @@ def edit_contact():
 
     print('You have selected option 4 (edit a contact)')
     print('')
-
-# Again creates an empty list.
-    contacts_list = []
-
-# Opens the file contact data.
-    with open("contact_data.csv", newline = '') as data:
-        read_data = csv.reader(data, delimiter = ',')
-
-# For each row in contact data, it is added on to the end of my list (contact_list).
-        for row in read_data:
-            contacts_list.append(row)
 
 # Asks the user to enter one bit of information of the contact their trying to edit so the contact can be located.
     search_info = str(input("""Enter the full name (first and Last), street address, phone number or birthday of the
@@ -111,7 +105,7 @@ contact you want to edit. (Note when entering a birthday please enter it in the 
             if information == search_info:
                 print('')
 # Shows the user the first contact to be found.
-                print("Contact(s) found: ", contacts_list[row_num])
+                print("Contact found: ", contacts_list[row_num])
 # Check is set to true so we know the contact exists.
                 check = True
 # Asks the user if this is the correct contact.
@@ -120,14 +114,15 @@ Is this the contact you wanted to edit?
 Please enter 'yes' if it is or 'no' to keep searching: """))
 # Depending on the users input
                 if search == 'yes':
+                    global temp_row
+                    temp_row = row_num
                     contacts_cli.edit_options()
-                    break
+                    return
                 elif search == 'no':
                     check = False
-                    break
-            else:
-# Allows the loop to continue.
-                continue
+                    continue
+                else:
+                    print('Not an option')
 # Runs if the contact doesn't exist.
     if check == False:
         print('')
@@ -137,11 +132,13 @@ Please enter 'yes' if it is or 'no' to keep searching: """))
 def change_name():
     print('')
     new_name = str(input('Please enter the new full name (first and last names): '))
+    temp_list = contacts_list[temp_row]
+    print(temp_list)
 
-def change_address():
+#def change_address():
 
-def change_phonenum():
+#def change_phonenum():
 
-def change_birthday():
+#def change_birthday():
 
-def delete():
+#def delete():

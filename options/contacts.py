@@ -112,7 +112,7 @@ contact you want to edit. (Note when entering a birthday please enter it in the 
                 search = str(input("""
 Is this the contact you wanted to edit?
 Please enter 'yes' if it is or 'no' to keep searching: """))
-# Depending on the users input
+# Depending on the users input.
                 if search == 'yes':
                     global temp_row
                     temp_row = row_num
@@ -123,6 +123,7 @@ Please enter 'yes' if it is or 'no' to keep searching: """))
                     continue
                 else:
                     print('Not an option')
+                    return
 # Runs if the contact doesn't exist.
     if check == False:
         print('')
@@ -131,14 +132,47 @@ Please enter 'yes' if it is or 'no' to keep searching: """))
 
 def change_name():
     print('')
+# Asks the user to input the new name.
     new_name = str(input('Please enter the new full name (first and last names): '))
+# Takes the row where the contact the user wishes to change and stores it in a temporary list.
     temp_list = contacts_list[temp_row]
+# Sets the first element which is the name column to the new name they inputted.
+    temp_list[0] = new_name
     print(temp_list)
+    contacts_list.append(temp_list)
 
-#def change_address():
+def change_address():
+    print('')
+# Asks the user to input the new street address.
+    new_address = str(input('Please enter the new street address: '))
+# Takes the row where the contact the user wishes to change and stores it in a temporary list.
+    temp_list = contacts_list[temp_row]
+# Sets the second element which is the address column to the new street address they inputted.
+    temp_list[1] = new_address
+    print(temp_list)
+    contacts_list.append(temp_list)
 
-#def change_phonenum():
+#
+def change_phonenum():
+    print('')
+# Asks the user to input the new phone number.
+    new_phonenum = str(input('Please enter the new phone number: '))
+# Takes the row where the contact the user wishes to change and stores it in a temporary list.
+    temp_list = contacts_list[temp_row]
+# Sets the third element which is the phone number column to the new phone number they inputted.
+    temp_list[2] = new_phonenum
+    print(temp_list)
+    contacts_list.append(temp_list)
 
-#def change_birthday():
+def change_birthday():
+    print('')
+# Asks the user to input the new birthday date.
+    new_birthday = str(input('Please enter the new birthday date in the form ##/##/####: '))
+# Takes the row where the contact the user wishes to change and stores it in a temporary list.
+    temp_list = contacts_list[temp_row]
+# Sets the last element which is the birthday date column to the new birthday date they inputted.
+    temp_list[3] = new_birthday
+    print(temp_list)
+    contacts_list.append(temp_list)
 
 #def delete():

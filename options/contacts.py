@@ -14,8 +14,9 @@ with open("contact_data.csv", newline = '') as data:
 
 temp_row = 0
 
-def add_contact():
+def AddContact():
 
+# Tested if a contact was added through my interface. No further testing needed.
     print("You have selected option 1 (Add a contact):")
     print('')
 
@@ -33,8 +34,8 @@ def add_contact():
     print("New contact added.")
 
 # Executes a section of code that allows the user to view all contacts stored in the contacts data file.
-def all_contacts():
-
+def AllContacts():
+# Tested if all contacts are shown through my interface. No further testing needed.
     print("You have selected option 2 (Show all contacts):")
     print('')
     print(contacts_list)
@@ -42,8 +43,10 @@ def all_contacts():
     print("All contacts shown.")
 
 # Executes a section of code that allows the user to find a contact by entering a name,address,phone number or birthday.
-def find_contact():
-
+def FindContact():
+# Tested if a contact can be found using my interface, if there are multiple contacts it asks the user if the one shown
+# first is their desired contact if not it shows the next contact that matched with their search data.
+# If they input any data that doesn't match any contact data they are told the contact does not exist.
     print("You have selected option 3 (Find a contact):")
     print('')
 
@@ -73,8 +76,10 @@ contact you want to find. (Note when entering a birthday please enter it in the 
     if check == False:
         print('Contact does not exist.')
 
-def edit_contact():
-
+def EditContact():
+# Tested if a contacts can be found same as my find_contact function, also tested if they input an option that does not
+# exist and how my program handles it. Finally tested if my programm successfully edits the desired contact and updates
+# the list containing all contacts.
     print('You have selected option 4 (edit a contact)')
     print('')
 
@@ -106,7 +111,7 @@ Please enter 'yes' if it is or 'no' to keep searching: """))
                 if search == 'yes':
                     global temp_row
                     temp_row = row_num
-                    contacts_cli.edit_options()
+                    contacts_cli.EditOptions()
                     return
                 elif search == 'no':
                     check = False
@@ -120,7 +125,7 @@ Please enter 'yes' if it is or 'no' to keep searching: """))
         print('Contact does not exist.')
 
 
-def change_name():
+def ChangeName():
     print('')
 # Asks the user to input the new name.
     new_name = str(input('Please enter the new full name (first and last names): '))
@@ -129,7 +134,7 @@ def change_name():
     print('')
     print("Contact updated: ", contacts_list[temp_row])
 
-def change_address():
+def ChangeAddress():
     print('')
 # Asks the user to input the new street address.
     new_address = str(input('Please enter the new street address: '))
@@ -139,7 +144,7 @@ def change_address():
     print("Contact Updated: ", contacts_list[temp_row])
 
 #
-def change_phonenum():
+def ChangePhonenum():
     print('')
 # Asks the user to input the new phone number.
     new_phonenum = str(input('Please enter the new phone number: '))
@@ -148,7 +153,7 @@ def change_phonenum():
     print('')
     print("Contact updated: ", contacts_list[temp_row])
 
-def change_birthday():
+def ChangeBirthday():
     print('')
 # Asks the user to input the new birthday date.
     new_birthday = str(input('Please enter the new birthday date in the form ##/##/####: '))
@@ -157,7 +162,7 @@ def change_birthday():
     print('')
     print("Contact updated: ", contacts_list[temp_row])
 
-def delete():
+def Delete():
     # Deletes the contact from the list.
     contacts_list.pop(temp_row)
     print('')
